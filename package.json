@@ -1,0 +1,32 @@
+{
+  "name": "monorepo-demo",
+  "type": "module",
+  "version": "1.0.0",
+  "scripts": {
+    "dev:play": "pnpm --parallel --stream --filter @demo/ui --filter @demo/play dev",
+    "dev:frontend": "pnpm build:ui && pnpm --filter @demo/frontend dev",
+    "build:ui": "pnpm --filter @demo/ui build",
+    "build:frontend": "pnpm build:ui && pnpm --filter @demo/frontend build",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "docs:dev": "pnpm --filter @demo/docs dev",
+    "docs:build": "pnpm --filter @demo/docs build",
+    "docs:preview": "pnpm --filter @demo/docs preview"
+  },
+  "peerDependencies": {
+    "vue": "^3.5.13"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "catalog:",
+    "@tailwindcss/vite": "catalog:",
+    "@types/node": "catalog:",
+    "@vitejs/plugin-vue": "catalog:",
+    "@vue/tsconfig": "catalog:",
+    "eslint": "catalog:",
+    "tailwindcss": "catalog:",
+    "typescript": "catalog:",
+    "unplugin-vue-components": "catalog:",
+    "vite": "catalog:",
+    "vue-tsc": "catalog:"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "extends": [
+    "../../tsconfig.app.json",
+    "../../tsconfig.node.json"
+  ],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"],
+      "@demo/ui": ["../ui/src"],
+      "@demo/ui/style.css": ["../ui/dist/ui.css"],
+      "@demo/ui/*": ["../ui/src/*"]
+    }
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "vite.config.ts",
+    "../ui/src/**/*.ts",
+    "../ui/src/**/*.tsx",
+    "../ui/src/**/*.vue"
+  ]
+}

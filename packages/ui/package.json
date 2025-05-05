@@ -1,0 +1,31 @@
+{
+  "name": "@demo/ui",
+  "type": "module",
+  "version": "0.0.0",
+  "private": true,
+  "exports": {
+    ".": {
+      "types": "./dist/src/index.d.ts",
+      "import": "./dist/demo-ui.es.js",
+      "require": "./dist/demo-ui.umd.js"
+    },
+    "./style.css": "./dist/ui.css"
+  },
+  "main": "dist/demo-ui.umd.js",
+  "module": "dist/demo-ui.es.js",
+  "types": "dist/src/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "rd /s /q dist && tailwindcss -i ./src/index.css -o ./dist/ui.css --watch",
+    "build": "rd /s /q dist && vue-tsc -b && vite build"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "catalog:",
+    "@types/lodash-es": "catalog:",
+    "lodash-es": "catalog:",
+    "vite-plugin-dts": "catalog:",
+    "vue": "catalog:"
+  }
+}
