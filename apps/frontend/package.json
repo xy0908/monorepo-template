@@ -9,7 +9,16 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "vue": "catalog:"
+    "@vueuse/core": "catalog:",
+    "@vueuse/head": "catalog:",
+    "axios": "catalog:",
+    "pinia": "catalog:",
+    "sass": "catalog:",
+    "unplugin-auto-import": "catalog:",
+    "vite-plugin-pages": "catalog:",
+    "vite-plugin-vue-layouts": "catalog:",
+    "vue": "catalog:",
+    "vue-router": "catalog:"
   },
   "devDependencies": {
     "@demo/ui": "workspace:*"
