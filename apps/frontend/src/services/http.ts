@@ -1,6 +1,12 @@
 import type { AxiosInstance, AxiosRequestConfig, AxiosResponse, InternalAxiosRequestConfig } from 'axios'
 import axios from 'axios'
 
+export interface AppleRes<T = any> {
+  code: number
+  msg: string
+  data: T | T[]
+}
+
 const instance: AxiosInstance = axios.create({
   baseURL: import.meta.env.VITE_API_BASE_URL,
   timeout: 10000,
@@ -34,17 +40,32 @@ instance.interceptors.response.use(
 )
 
 // 封装通用请求方法
+// const http = {
+//   get<T = any>(url: string, config?: AxiosRequestConfig): Promise<T> {
+//     return instance.get(url, config)
+//   },
+//   post<T = any>(url: string, data?: any, config?: AxiosRequestConfig): Promise<T> {
+//     return instance.post(url, data, config)
+//   },
+//   put<T = any>(url: string, data?: any, config?: AxiosRequestConfig): Promise<T> {
+//     return instance.put(url, data, config)
+//   },
+//   delete<T = any>(url: string, config?: AxiosRequestConfig): Promise<T> {
+//     return instance.delete(url, config)
+//   },
+// }
+
 const http = {
-  get<T = any>(url: string, config?: AxiosRequestConfig): Promise<T> {
+  get<T = any>(url: string, config?: AxiosRequestConfig): Promise<AppleRes<T>> {
     return instance.get(url, config)
   },
-  post<T = any>(url: string, data?: any, config?: AxiosRequestConfig): Promise<T> {
+  post<T = any>(url: string, data?: any, config?: AxiosRequestConfig): Promise<AppleRes<T>> {
     return instance.post(url, data, config)
   },
-  put<T = any>(url: string, data?: any, config?: AxiosRequestConfig): Promise<T> {
+  put<T = any>(url: string, data?: any, config?: AxiosRequestConfig): Promise<AppleRes<T>> {
     return instance.put(url, data, config)
   },
-  delete<T = any>(url: string, config?: AxiosRequestConfig): Promise<T> {
+  delete<T = any>(url: string, config?: AxiosRequestConfig): Promise<AppleRes<T>> {
     return instance.delete(url, config)
   },
 }
