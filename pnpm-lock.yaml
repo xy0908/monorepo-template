@@ -27,6 +27,15 @@ catalogs:
     '@vue/tsconfig':
       specifier: ^0.7.0
       version: 0.7.0
+    '@vueuse/core':
+      specifier: ^13.1.0
+      version: 13.1.0
+    '@vueuse/head':
+      specifier: ^2.0.0
+      version: 2.0.0
+    axios:
+      specifier: ^1.9.0
+      version: 1.9.0
     eslint:
       specifier: ^9.24.0
       version: 9.26.0
@@ -121,13 +130,13 @@ importers:
   apps/frontend:
     dependencies:
       '@vueuse/core':
-        specifier: ^13.1.0
+        specifier: 'catalog:'
         version: 13.1.0(vue@3.5.13(typescript@5.8.2))
       '@vueuse/head':
-        specifier: ^2.0.0
+        specifier: 'catalog:'
         version: 2.0.0(vue@3.5.13(typescript@5.8.2))
       axios:
-        specifier: ^1.9.0
+        specifier: 'catalog:'
         version: 1.9.0
       pinia:
         specifier: 'catalog:'

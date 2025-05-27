@@ -1,0 +1,23 @@
+// 示例：响应式断点 Mixin
+@mixin respond-to($breakpoint) {
+  @if $breakpoint =='phone' {
+    @media (max-width: 600px) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint =='tablet' {
+    @media (max-width: 900px) {
+      @content;
+    }
+  }
+}
+
+// 示例：清除浮动
+@mixin clearfix {
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
